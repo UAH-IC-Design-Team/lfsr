@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Thu May 26 20:50:20 2022
+[*]
+[dumpfile] "/Designs/lfsr/lfsr.vcd"
+[dumpfile_mtime] "Thu May 26 20:49:18 2022"
+[dumpfile_size] 2220
+[savefile] "/Designs/lfsr/gtkwave_saves/lfsr.gtkw"
+[timestart] 0
+[size] 1197 626
+[pos] 117 101
+*-18.109438 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] lfsr.
+[sst_width] 276
+[signals_width] 110
+[sst_expanded] 1
+[sst_vpaned_height] 166
+@28
+lfsr.clk
+lfsr.reset
+lfsr.load
+lfsr.s_reg_in
+lfsr.new_bit
+@800022
+lfsr.s_reg[7:0]
+@28
+(0)lfsr.s_reg[7:0]
+(1)lfsr.s_reg[7:0]
+(2)lfsr.s_reg[7:0]
+(3)lfsr.s_reg[7:0]
+(4)lfsr.s_reg[7:0]
+(5)lfsr.s_reg[7:0]
+(6)lfsr.s_reg[7:0]
+(7)lfsr.s_reg[7:0]
+@1001200
+-group_end
+@29
+lfsr.lfsr_out
+[pattern_trace] 1
+[pattern_trace] 0

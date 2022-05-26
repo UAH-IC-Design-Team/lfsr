@@ -1,6 +1,6 @@
 module dump();
     initial begin 
-        $dumpfile ("dflop.vcf");
+        $dumpfile ("dflop.vcd");
         $dumpvars (0, dflop);
         #1;
     end

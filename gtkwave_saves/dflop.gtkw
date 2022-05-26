@@ -1,0 +1,23 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Thu May 26 14:40:31 2022
+[*]
+[dumpfile] "/Designs/lfsr/dflop.vcf"
+[dumpfile_mtime] "Thu May 26 14:29:05 2022"
+[dumpfile_size] 426
+[savefile] "/Designs/lfsr/gtkwave_saves/dflop.gtkw"
+[timestart] 14440
+[size] 1000 600
+[pos] -1 -1
+*-14.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 276
+[signals_width] 78
+[sst_expanded] 1
+[sst_vpaned_height] 157
+@29
+dflop.clk
+@28
+dflop.D
+dflop.Q
+[pattern_trace] 1
+[pattern_trace] 0
