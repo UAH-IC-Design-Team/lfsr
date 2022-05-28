@@ -1,0 +1,27 @@
+[*]
+[*] GTKWave Analyzer v3.3.111 (w)1999-2020 BSI
+[*] Thu May 26 22:48:52 2022
+[*]
+[dumpfile] "/Designs/lfsr/tap.vcd"
+[dumpfile_mtime] "Thu May 26 22:48:32 2022"
+[dumpfile_size] 1334
+[savefile] "/Designs/lfsr/gtkwave_saves/tap.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-17.748981 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] tap.
+[sst_width] 276
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 157
+@28
+tap.clk
+tap.reset
+tap.load
+tap.sr_clk
+tap.tap_in
+@23
+tap.tap_reg[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

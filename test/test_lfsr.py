@@ -47,5 +47,6 @@ async def test_shift_reg(dut):
         # else:
         #     assert(dut.s_out == seq[i -shift_reg_depth])
 
+# TODO Need to write asertions!!!
 
 

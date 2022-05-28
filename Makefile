@@ -25,6 +25,14 @@ test_lfsr:
 	PYTHONOPTIMIZE=${NOASSERT} MODULE=test.test_lfsr vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp -vcd
 	! grep failure results.xml
 
+test_tap:
+	rm -rf sim_build/
+	mkdir sim_build/
+	iverilog -o sim_build/sim.vvp -s tap -s dump -g2012 src/tap.v src/shift_reg.v test/dump_tap.v 
+	PYTHONOPTIMIZE=${NOASSERT} MODULE=test.test_tap vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp -vcd
+	! grep failure results.xml
+
+
 show_gtk_: %.vcd ./gtkwave_saves/%.gtkw
 	gtkwave $^
 
