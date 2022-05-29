@@ -19,26 +19,38 @@ async def test_shift_reg(dut):
     cocotb.fork(clock.start())
 
     # set starting variables
-    dut.load.value = 0;
-    dut.s_reg_in.value = 0;
+    dut.load_s_reg.value = 0
+    dut.reg_in.value = 0
+    dut.load_tap_reg.value = 0
 
     # reset the shift register
     await reset(dut)
 
     # Initialize the shift register with random values
     shift_reg_depth = 8;
-    seq = [random.randint(0,1) for _ in range(shift_reg_depth)]
-    dut.load.value = 1
+    seq1 = [random.randint(0,1) for _ in range(shift_reg_depth)]
+    seq2 = [random.randint(0,1) for _ in range(shift_reg_depth)]
 
-    for i in range(0, len(seq) -1):
-        dut.s_reg_in.value = seq[i]
+
+    # load the shift reg with some random values
+    dut.load_s_reg.value = 1
+    for i in range(0, len(seq1) -1):
+        dut.reg_in.value = seq1[i]
         await RisingEdge(dut.clk)
+    dut.load_s_reg.value = 0
+
+    # load the tap with another set of values
+    dut.load_tap_reg.value = 1
+    for i in range(0, len(seq1) -1):
+        dut.reg_in.value = seq2[i]
+        await RisingEdge(dut.clk)
+    dut.load_tap_reg.value = 0
+
 
     # Test the lfsr
 
     pre_feed = shift_reg_depth;
     # Need to test that the feedback XOR is working properly
-    dut.load.value = 0
     for i in range(0, cycles-shift_reg_depth -1):
         await RisingEdge(dut.clk)
 

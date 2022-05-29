@@ -21,7 +21,7 @@ test_shift_reg:
 test_lfsr:
 	rm -rf sim_build/
 	mkdir sim_build/
-	iverilog -o sim_build/sim.vvp -s lfsr -s dump -g2012 src/lfsr.v src/shift_reg.v test/dump_lfsr.v 
+	iverilog -o sim_build/sim.vvp -s lfsr -s dump -g2012 src/lfsr.v src/shift_reg.v src/tap.v test/dump_lfsr.v 
 	PYTHONOPTIMIZE=${NOASSERT} MODULE=test.test_lfsr vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp -vcd
 	! grep failure results.xml
 
