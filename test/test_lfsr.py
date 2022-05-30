@@ -3,6 +3,14 @@ from cocotb.clock import Clock
 from cocotb.triggers import RisingEdge, FallingEdge, ClockCycles
 import random
 
+def red_xor(x):
+    k = 0
+    d = x
+    while d != 0:
+        k = k + 1
+        d = d & (d - 1)
+    return k % 2
+
 async def reset(dut):
     dut.reset.value = 1;
     await RisingEdge(dut.clk)
@@ -49,15 +57,10 @@ async def test_shift_reg(dut):
 
     # Test the lfsr
 
-    pre_feed = shift_reg_depth;
     # Need to test that the feedback XOR is working properly
     for i in range(0, cycles-shift_reg_depth -1):
         await RisingEdge(dut.clk)
 
-        if pre_feed > 0:
-            pre_feed = pre_feed -1
-        # else:
-        #     assert(dut.s_out == seq[i -shift_reg_depth])
 
 # TODO Need to write asertions!!!
 
