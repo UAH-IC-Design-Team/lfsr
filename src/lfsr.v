@@ -8,11 +8,13 @@ module lfsr(
     load,
     s_reg_in,
     s_reg,
-    lfsr_out
+    lfsr_out,
+    taps
 );
     input   wire            clk;
     input   wire            reset;
     input   wire            load;
+    input   wire [n-1:0]    taps;
     input   wire            s_reg_in;
     output  wire [n-1:0]    s_reg;
     output  wire            lfsr_out;
@@ -28,6 +30,13 @@ module lfsr(
         .s_reg(s_reg),
         .s_out(lfsr_out)
     );
+
+    reg [n-1:0] taps = 8'b10101000;
+    //reg [n-1:0] taps = 8'b00010101;
+
+    wire test_output;
+
+    assign test_output = ^(s_reg&taps);
 
     assign new_bit = load ? s_reg_in : s_reg[n-1] ^ s_reg[n-3] ^ s_reg[n-5];
 
