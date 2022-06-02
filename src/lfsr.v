@@ -3,23 +3,24 @@
 `timescale 1ns/1ns
 
 module lfsr(
-    clk, 
-    reset,
-    load,
-    s_reg_in,
-    s_reg,
-    lfsr_out
-);
-    input   wire            clk;
-    input   wire            reset;
-    input   wire            load;
-    input   wire            s_reg_in;
-    output  wire [n-1:0]    s_reg;
-    output  wire            lfsr_out;
+    `ifdef USE_POWER_PINS
+        inout vccd1,	// User area 1 1.8V supply
+        inout vssd1,	// User area 1 digital ground
+    `endif
 
-    parameter n = 8;
+    input   wire            clk,
+    input   wire            reset,
+    input   wire            load,
+    input   wire            s_reg_in,
+    output  wire            lfsr_out,
+    output  wire            io_oeb
+);
+        parameter n = 8;
 
     wire                    new_bit;
+    wire        [n-1:0]     s_reg;
+
+    assign io_oeb = 1'b0;
 
     shift_reg shift_reg0(
         .clk(clk),
